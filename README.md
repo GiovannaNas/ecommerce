@@ -25,11 +25,11 @@ Abra o arquivo index.html dentro da pasta src/pages/index.html ou qualquer outro
 # Criação do Banco de Dados e Tabelas
 Este documento explica o processo de criação do banco de dados e suas respectivas tabelas, focado em um sistema de gestão de estoque e vendas. 
 
-- Criação do Banco de Dados
+Criação do Banco de Dados <br>
 1.Criação do Banco de Dados: O banco de dados é criado com o comando CREATE DATABASE estoque_vendas;. Esse comando inicializa um novo banco de dados chamado estoque_vendas.
 2.Seleção do Banco de Dados: Após a criação, o banco de dados estoque_vendas é selecionado para uso com o comando USE estoque_vendas;. Isso garante que todas as operações subsequentes sejam realizadas no banco de dados recém-criado.
 
-- Criação das Tabelas
+Criação das Tabelas
 1.Tabela empresa:
 Descrição: Armazena informações das empresas que oferecem produtos para venda.
 Campos Principais: Incluem identificador único (empresa_id), razão social, CNPJ (único), e data de cadastro. Campos adicionais incluem nome fantasia, email, telefone, celular, contato e endereço completo.
