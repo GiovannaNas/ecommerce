@@ -1,42 +1,64 @@
 -- Script de criação do banco de dados e tabelas
 -- Autor: Giovanna Alves do Nascimento
 
+CREATE DATABASE estoque_vendas;
+
+
+USE estoque_vendas;
+
+
+CREATE TABLE empresa (
+    empresa_id INT AUTO_INCREMENT PRIMARY KEY,
+    razao_social VARCHAR(100) NOT NULL,
+    nome_fantasia VARCHAR(100),
+    cnpj VARCHAR(14) NOT NULL UNIQUE,
+    email VARCHAR(30),
+    data_cadastro DATE NOT NULL,
+    telefone VARCHAR(20),
+    celular VARCHAR(20),
+    contato VARCHAR(30),
+    endereco_completo VARCHAR(100)
+);
+
+
 CREATE TABLE cliente (
     cliente_id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
-    cpf VARCHAR(11) NOT NULL UNIQUE,
     data_nascimento DATE,
-    data_cadastro DATE NOT NULL,
-    email VARCHAR(20),
-    telefone VARCHAR(14),
-    celular VARCHAR(14),
-    endereco_completo VARCHAR(100)
+    sexo BOOLEAN,
+    endereco VARCHAR(50),
+    cep VARCHAR(8),
+    bairro VARCHAR(20),
+    numero VARCHAR(5),
+    complemento VARCHAR(50),
+    cidade VARCHAR(20),
+    estado VARCHAR(20)
 );
+
 
 CREATE TABLE produto (
     produto_id INT AUTO_INCREMENT PRIMARY KEY,
     empresa_id INT NOT NULL,
-    descricao VARCHAR(255) NOT NULL,
-    codigo_produto VARCHAR(100) NOT NULL UNIQUE,
+    descricao VARCHAR(100) NOT NULL,
+    quantidade INT,
     valor FLOAT NOT NULL,
     valor_promocional FLOAT,
     data_inicio_promocao DATE,
     data_fim_promocao DATE,
-    data_cadastro DATE NOT NULL,
-    status BOOLEAN NOT NULL,
     FOREIGN KEY (empresa_id) REFERENCES empresa (empresa_id)
 );
-CREATE TABLE estoque (
-    estoque_id INT AUTO_INCREMENT PRIMARY KEY,
-    produto_id INT NOT NULL,
-    nome_produto VARCHAR(100) NOT NULL,
-    valor_produto FLOAT NOT NULL,
-    data_cadastro DATE NOT NULL,
-    quantidade_vendida INT DEFAULT 0,
-    quantidade_estoque INT NOT NULL,
-    status BOOLEAN NOT NULL,
-    FOREIGN KEY (produto_id) REFERENCES produto (produto_id)
+
+
+CREATE TABLE venda (
+    venda_id INT AUTO_INCREMENT PRIMARY KEY,
+    empresa_id INT NOT NULL,
+    cliente_id INT NOT NULL,
+    data_venda DATE NOT NULL,
+    total_pago FLOAT,
+    FOREIGN KEY (empresa_id) REFERENCES empresa (empresa_id),
+    FOREIGN KEY (cliente_id) REFERENCES cliente (cliente_id)
 );
+
 
 CREATE TABLE venda_produto (
     venda_produto_id INT AUTO_INCREMENT PRIMARY KEY,
