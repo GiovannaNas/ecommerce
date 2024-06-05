@@ -1,0 +1,32 @@
+main {
+  padding: 2em;
+}
+
+#clientesContainer, #empresasContainer {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.item-list {
+  border: 1px solid var(--gray-light);
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 4px;
+  background-color: var(--white-color);
+}
+
+.item-details {
+  margin-top: 1em;
+}
+
+.item-details p {
+  margin: 0.5em 0;
+}
+
+@media screen and (max-width: 768px){
+  #clientesContainer, #empresasContainer {
+    grid-template-columns: 1fr;
+  }
+}

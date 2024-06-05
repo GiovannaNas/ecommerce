@@ -1,0 +1,23 @@
+main {
+  height: auto;
+}
+
+.acoes-rapidas {
+  margin-bottom: 10px;
+}
+
+.acoes-rapidas-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (max-width: 768px){
+  .acoes-rapidas-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    
+  }
+}

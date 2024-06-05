@@ -1,0 +1,55 @@
+#estoqueForm {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+#estoque {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.product {
+  background-color: var(--white-color);
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 4px;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remove-button {
+  margin: 0 0 0 10px;
+  background-color: var(--error);
+  padding: 6px;
+  transition: background-color 0.3s;
+}
+
+.remove-button:hover {
+  background-color: var(--error);
+  filter: brightness(90%);
+}
+
+.product-details {
+  margin-top: 1em;
+}
+
+.product-details p {
+  margin: 0.5em 0;
+}
+
+.atualizar-button {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 768px){
+  #estoque {
+    grid-template-columns: 1fr;
+  }
+}

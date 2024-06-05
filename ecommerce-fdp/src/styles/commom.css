@@ -1,0 +1,238 @@
+/* Define uma paleta de tons azuis */
+:root {
+  --primary-color: #0d47a1;
+  --secondary-color: #1976d2;
+  --accent-color: #42a5f5;
+  --background-color: #e3f2fd;
+  --white-color: #ffffff;
+  --text-color: #ffffff;
+  --error: #cc2c2c;
+  --success: #37d549;
+
+  --gray-darker: #333;
+  --gray-medium: #555;
+  --gray-light: #777;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: calc(100vh - 144px);
+}
+
+/* ESTILOS DO HEADER */
+header {
+  background-color: var(--primary-color);
+  padding: 10px 0;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+nav .logo img {
+  height: 50px;
+}
+
+nav .menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+nav .menu-toggle span {
+  background-color: var(--text-color);
+  height: 2px;
+  width: 25px;
+  margin: 4px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: var(--secondary-color);
+}
+
+nav ul li a:active {
+  background-color: var(--accent-color);
+}
+
+.accordion-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--accent-color);
+  border-radius: 5px;
+  margin-top: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.accordion-content li {
+  margin: 0;
+}
+
+.accordion-content li a {
+  padding: 10px 15px;
+  display: block;
+  white-space: nowrap;
+}
+
+.accordion-header::after {
+  content: '▼';
+  margin-left: 10px;
+  font-size: 0.8em;
+}
+
+.accordion.active .accordion-content {
+  display: block;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .accordion-content {
+    position: relative;
+    box-shadow: none;
+  }
+}
+/* FIM ESTILOS HEADER */
+
+/* ESTILOS DO FORMULÁRIO */
+.container {
+  background-color: var(--white-color);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--gray-darker);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  color: var(--gray-medium);
+}
+
+input, select {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid var(--gray-light);
+  border-radius: 5px;
+}
+
+button, .link {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .link:hover {
+  background-color: var(--secondary-color);
+}
+
+.link {
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+#message {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#message.success {
+  color: var(--success);
+}
+
+#message.error {
+  color: var(--error);
+}
+/* FIM ESTILOS DO FORMULÁRIO */
+
+/* ESTILOS FOOTER */
+footer {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 10px 0;
+  color: var(--text-color);
+  text-align: center;
+}
+
+@media screen and (max-width: 768px){
+  main {
+    height: auto;
+  }
+}

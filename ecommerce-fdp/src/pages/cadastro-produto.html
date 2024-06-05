@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Produtos</title>
+    <link rel="stylesheet" href="../styles/commom.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="index.html">
+            <img src="../assets/logo.png" alt="Logo da empresa" />
+          </a>
+        </div>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links">
+          <li class="accordion">
+            <a href="#" class="accordion-header">Cadastro</a>
+            <ul class="accordion-content">
+              <li><a href="cadastro-empresas.html">Cadastro de Empresas</a></li>
+              <li><a href="cadastro-clientes.html">Cadastro de Clientes</a></li>
+              <li><a href="cadastro-produto.html">Cadastro de Produtos</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="estoque.html">Ver Estoque</a>
+          </li>
+          <li>
+            <a href="realizar-venda.html">Realizar Venda</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h1>Cadastro de Produto</h1>
+      <form id="produtoForm">
+        <label for="descricao">Descrição:</label>
+        <input id="descricao" name="descricao" required></input>
+
+        <label for="codigo">Código do Produto:</label>
+        <input type="text" id="codigo" name="codigo" required />
+
+        <label for="valor">Valor:</label>
+        <input type="number" min="0" id="valor" name="valor" step="0.01" required />
+
+        <label for="valorPromocional">Valor Promocional:</label>
+        <input
+          type="number"
+          min="0"
+          id="valorPromocional"
+          name="valorPromocional"
+          step="0.01"
+        />
+
+        <label for="dataInicialPromocao">Data Inicial da Promoção:</label>
+        <input
+          type="date"
+          id="dataInicialPromocao"
+          name="dataInicialPromocao"
+        />
+
+        <label for="dataFinalPromocao">Data Final da Promoção:</label>
+        <input type="date" id="dataFinalPromocao" name="dataFinalPromocao" />
+
+        <label for="dataCadastro">Data de Cadastro:</label>
+        <input type="date" id="dataCadastro" name="dataCadastro" required />
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+          <option value="ativo">Ativo</option>
+          <option value="inativo">Inativo</option>
+        </select>
+
+        <button type="submit">Cadastrar</button>
+      </form>
+      <div id="message"></div>
+    </div>
+
+    <footer>
+      <p>Giovanna Nascimento &copy; 2024 - Todos os direitos reservados</p>
+    </footer>
+    <script src="../scripts/header.js"></script>
+    <script src="../scripts/cadastro-produto.js"></script>
+  </body>
+</html>

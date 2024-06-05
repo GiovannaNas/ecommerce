@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empresas Cadastradas</title>
+    <link rel="stylesheet" href="../styles/commom.css" />
+    <link rel="stylesheet" href="../styles/realizar-venda.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="index.html">
+            <img src="../assets/logo.png" alt="Logo da empresa" />
+          </a>
+        </div>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links">
+          <li class="accordion">
+            <a href="#" class="accordion-header">Cadastro</a>
+            <ul class="accordion-content">
+              <li><a href="cadastro-empresas.html">Cadastro de Empresas</a></li>
+              <li><a href="cadastro-clientes.html">Cadastro de Clientes</a></li>
+              <li><a href="cadastro-produto.html">Cadastro de Produtos</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="estoque.html">Ver Estoque</a>
+          </li>
+          <li>
+            <a href="realizar-venda.html">Realizar Venda</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+    <section class="acoes-rapidas">
+      <h1>Ações Rápidas</h1>
+      <div class="acoes-rapidas-items">
+        <a class="link" href="cadastro-empresas.html">Cadastrar Empresa</a>
+        <a class="link" href="cadastro-clientes.html">Cadastrar Cliente</a>
+        <a class="link" href="cadastro-produto.html">Cadastrar Produto</a>
+        <a class="link" href="visualizar-empresas.html">Ver Empresas</a>
+        <a class="link" href="visualizar-clientes.html">Ver Clientes</a>
+        <a class="link" href="estoque.html">Ver Estoque</a>
+      </div>
+    </section>
+
+    <section id="infoCadastro"></section>
+    <main>
+      <h1>Realizar Venda</h1>
+      <form id="vendaForm">
+        <label for="empresa">Empresa:</label>
+        <select id="empresa" name="empresa" required>
+          <option value="" disabled selected>Selecione uma empresa</option>
+        </select>
+
+        <label for="cliente">Cliente:</label>
+        <select id="cliente" name="cliente" required>
+          <option value="" disabled selected>Selecione um cliente</option>
+        </select>
+
+        <label for="dataVenda">Data da Venda:</label>
+        <input type="date" id="dataVenda" name="dataVenda" required />
+
+        <label for="produto">Produto:</label>
+        <select id="produto" name="produto" required>
+          <option value="" disabled selected>Selecione um produto</option>
+        </select>
+
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" min="0" id="quantidade" name="quantidade" required />
+
+        <label for="desconto">Desconto (%):</label>
+        <input type="number" min="0" id="desconto" name="desconto" value="0" required />
+
+        <label for="valorPago">Valor Pago:</label>
+        <input type="number" min="0" id="valorPago" name="valorPago" required />
+
+        <button type="submit">Concluir Venda</button>
+      </form>
+      <div id="message"></div>
+    </main>
+
+    <footer>
+      <p>Giovanna Nascimento &copy; 2024 - Todos os direitos reservados</p>
+    </footer>
+    <script src="../scripts/header.js"></script>
+    <script src="../scripts/realizar-venda.js"></script>
+  </body>
+</html>
