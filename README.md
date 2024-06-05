@@ -3,10 +3,10 @@ Projeto simulando vendas de uma empresa.
 
 Para que uma venda seja efetivada é necessário: 
 
-1 - Uma empresa Cadastrada
-2 - Um CLiente Cadastrado 
-3 - Um produto cadastrado 
-4 - Produto cadastrado no estoque
+1 - Uma empresa Cadastrada <br>
+2 - Um CLiente Cadastrado <br>
+3 - Um produto cadastrado <br>
+4 - Produto cadastrado no estoque <br>
 
 Todos os dados estão mockados e salvos em localStorage para facilitar o desenvolvimento.
 
